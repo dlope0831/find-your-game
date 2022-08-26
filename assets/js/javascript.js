@@ -1,4 +1,6 @@
 var startForm = document.querySelector(".container");
+var genreIdCounter = 0;
+
 var genresArrayEl = [
     "Single Player",
     "Multi-player",
@@ -18,15 +20,14 @@ var genresArrayEl = [
     "Survival"
 ]
 
-for (let i = 0; i < genresArrayEl.length; i++) {
+for (var i = 0; i < genresArrayEl.length; i++) {
     genresArrayEl + genresArrayEl[i] + 1;
     
 }
+
+
 console.log(genresArrayEl)
 // The user is presented with the option to take a brief survey on what games they would like to play
-
-var testForm = document.createElement("form");
-
     
 // The user starts the quiz
 
