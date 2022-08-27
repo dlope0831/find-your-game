@@ -1,5 +1,6 @@
 var startForm = document.querySelector(".container");
 var startSurvery = document.querySelector(".btn-start")
+// var selectedGenre = document.querySelector("#" + dataBtnId)
 var dataBtnId = 0;
 
 var genresArrayEl = [
@@ -33,9 +34,9 @@ startForm.appendChild(startSurvery);
 // array is iterated and an id assigned to each of the array items
 var createGenreBtn = function(genreBtn) {
     
+    // The different catagories are added to a quiz container
     for (var i = 0; i < genresArrayEl.length; i++) {
         var genreBtn = genresArrayEl[i];
-        console.log(i)
         
         var buttonEl = document.createElement("button");
         buttonEl.className = "btn";
@@ -45,14 +46,18 @@ var createGenreBtn = function(genreBtn) {
         startForm.appendChild(buttonEl);
     }
     console.log(genreBtn);
+
+    startSurvery.remove();
 }
 
-// The different catagories are added to a quiz container
-
-// console.log(genresArrayEl);
 // The user selects genres that they are interested in
+function genrePool() {
+    console.log(selectedGenre)
+}
 
 // all of the users selections are pooled
 
 // the pooled results are added to a for loop
-startSurvery.addEventListener("click", createGenreBtn)
+
+// selectedGenre.addEventListener("click", genrePool);
+startSurvery.addEventListener("click", createGenreBtn);
