@@ -35,19 +35,16 @@ var createGenreBtn = function(genreBtn) {
     
     for (var i = 0; i < genresArrayEl.length; i++) {
         var genreBtn = genresArrayEl[i];
-        console.log(genreBtn)
-        
+        console.log(i)
         
         var buttonEl = document.createElement("button");
         buttonEl.className = "btn";
-        buttonEl.setAttribute("data-btn-id", dataBtnId);
+        buttonEl.setAttribute("data-btn-id", i);
         buttonEl.innerHTML = genreBtn;
 
+        startForm.appendChild(buttonEl);
     }
-    
-    
-    
-    startForm.appendChild(buttonEl)
+    console.log(genreBtn);
 }
 
 // The different catagories are added to a quiz container
