@@ -3,7 +3,19 @@
 font-size: 24px;  
 }
 
+/* hero */
+.hero-body {
+    display: flex;
+    background-image: url(../images/Gaming-Wallpaper-Desktop.jpg);
+    background-position: 50%;
+}
+
 /* main box component */
 main {
-  margin: 125px;  
+  margin: 35px;  
 }
+
+h2 {
+    margin-bottom: 15;
+}
+
