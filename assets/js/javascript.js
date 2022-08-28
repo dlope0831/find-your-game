@@ -4,21 +4,25 @@ var surveyForm = document.querySelector(".quiz-body");
 var startBtn = document.querySelector(".btn-start");
 
 var genresArrayEl = [
-    {name:"Single Player", class: "single-player"},
-    {name:"Multi-player", class:"multi-player"},
-    {name:"First Person Shooter", class:"fps"},
+    {name:"Massively Multiplayer", class:"massively-multiplayer"},
+    {name:"Shooter", class:"shooter"},
     {name:"Action", class:"action"},
     {name:"Adventure",class:"adventure"},
     {name:"Racing",class:"racing"},
-    {name:"Third-person",class:"third-person"},
-    {name:"Sandbox",class:"sandbox"},
-    {name:"Real-time strategy",class:"real-time-strategy"},
+    {name:"Strategy",class:"strategy"},
     {name:"MOBA",class:"moba"},
-    {name:"Role-playing",class:"role-playing"},
+    {name:"Indie",class:"indie"},
+    {name:"Role-playing",class:"role-playing-games-rpg"},
     {name:"Sports",class:"sports"},
     {name:"Simulation",class:"simulation"},
+    {name:"Arcade", class:"arcade"},
     {name:"Horror",class:"horror"},
-    {name:"Survival",class:"survival"}
+    {name:"Puzzle",class:"puzzle"},
+    {name:"Fighting",class:"fighting"},
+    {name:"Casual",class:"casual"},
+    {name:"Family",class:"family"},
+    {name:"Board Games",class:"board-games"},
+    {name:"Educational",class:"educational"}
 ]
 
 // var displayGames = function(data) {
@@ -46,8 +50,7 @@ startBtn.className = "btn btn-start";
 
 surveyForm.appendChild(startBtn);
 
-
-//array is iterated and an id assigned to each of the array items
+// a class is assigned here and an event listener is attached to each of the buttons
 var createGenresBtn = function(genreBtn) {
     console.log("start survey clicked")
     
@@ -92,7 +95,5 @@ var sortGenres = function(genreBtn) {
         displayGenre(genre)
     })
 }
-
-
 
 startBtn.addEventListener("click", createGenresBtn);
