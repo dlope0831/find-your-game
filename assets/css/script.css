@@ -4,7 +4,7 @@ font-size: 24px;
 }
 
 /* hero */
-.hero-body {
+.hero {
     display: flex;
     background-image: url(../images/Gaming-Wallpaper-Desktop.jpg);
     background-position: 50%;
