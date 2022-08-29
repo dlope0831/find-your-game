@@ -6,7 +6,7 @@ var genreInfo = document.getElementById("display-genre")
         gameInfo.innerHTML = "";
         for (var i = 0; i < data.length; i++){
             gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
-            gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
+            gameInfo.innerHTML += "<li>" + data[i].salePrice + "</li>";
             // console.log(data[i].title);
         }     
         }
@@ -21,6 +21,7 @@ fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=r
 
 var apiKey = "d7abd65b5bef4c83850767b95d538795";
 var search = ["action","horror", "indie"];
+var players =["singleplayer","multiplayer"];
 
 var displayGenre = function(genre) {
     genreInfo.innerHTML = "";
@@ -30,7 +31,7 @@ var displayGenre = function(genre) {
     }     
     }
 
-fetch("https://api.rawg.io/api/games?genres="+search.join(",")+"&key=" + apiKey)
+fetch("https://api.rawg.io/api/games?genres="+players+search.join(",")+"&key=" + apiKey)
     .then(result => result.json())
     .then(genre => {
         // console.log('genre', genre.results);
