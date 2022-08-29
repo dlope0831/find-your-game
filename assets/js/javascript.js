@@ -37,8 +37,8 @@ var genresArrayEl = [
 // fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=release')
 // .then(result => result.json())
 // .then(data => {
-//     // console.log('data',data);
-//     // displayGames(data)
+//     console.log('data',data);
+//     displayGames(data)
 // }
 // )
 
@@ -65,7 +65,7 @@ var createGenresBtn = function(genreBtn) {
         
         surveyForm.appendChild(buttonEl);
         
-        buttonEl.addEventListener("click", sortGenres)
+        buttonEl.addEventListener("click", sortGames)
     }
     startBtn.remove();
     
@@ -73,10 +73,11 @@ var createGenresBtn = function(genreBtn) {
 }
 
 // The user selects genres that they are interested in
-var sortGenres = function(genreBtn) {
+var sortGames = function(genreBtn) {
     var selectedGenre = genreBtn.target.className;
-    console.log(selectedGenre)
+    // console.log(selectedGenre)
     
+    // This is the API that is used to search games by genre the user selects
     var apiKey = "d7abd65b5bef4c83850767b95d538795";
     // var search = ["action","horror", "indie"];
 
@@ -84,16 +85,44 @@ var sortGenres = function(genreBtn) {
     genreInfo.innerHTML = "";
     for (var i = 0; i < genre.results.length; i++){
         genreInfo.innerHTML += "<li>" + genre.results[i].name + "</li>";
-        
+        var gameName = genre.results[i].slug;
+        // console.log(gameName)
+
+        nameInput(gameName)
     }     
     };
 
+    
     fetch("https://api.rawg.io/api/games?genres="+ selectedGenre +"&key=" + apiKey)
     .then(result => result.json())
     .then(genre => {
-        // console.log('genre', genre.results);
-        displayGenre(genre)
-    })
+    // console.log('genre', genre.results);
+    displayGenre(genre)
+    });
+
+    // end genre API fetch request
+
+    var nameInput = function(gameName) {
+        var displayGames = function(data) {
+            gameInfo.innerHTML = "";
+            for (var i = 0; i < data.length; i++){
+                
+                // gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
+                // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
+                console.log(data[i])
+            }     
+        }
+        
+        fetch("https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=1&exact=0")
+        .then(result => result.json())
+        .then(data => {
+            // console.log(data);
+            displayGames(data)
+        }
+        )
+    }
+
+
 }
 
 startBtn.addEventListener("click", createGenresBtn);
