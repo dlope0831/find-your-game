@@ -77,7 +77,7 @@ var sortGames = function(genreBtn) {
     var selectedGenre = genreBtn.target.className;
     // console.log(selectedGenre)
     
-    // This is the API that is used to search games by genre the user selects
+    // This is the RAWG API that is used to search games by genre the user selects
     var apiKey = "d7abd65b5bef4c83850767b95d538795";
     // var search = ["action","horror", "indie"];
 
@@ -90,6 +90,7 @@ var sortGames = function(genreBtn) {
 
         nameInput(gameName)
     }     
+
     };
 
     
@@ -100,17 +101,18 @@ var sortGames = function(genreBtn) {
     displayGenre(genre)
     });
 
-    // end genre API fetch request
+    // end RAWG genre API fetch request
 
     var nameInput = function(gameName) {
         var displayGames = function(data) {
             gameInfo.innerHTML = "";
             for (var i = 0; i < data.length; i++){
-                
+                var gameID = data[i].gameID;
                 // gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
                 // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
-                console.log(data[i])
-            }     
+                // console.log(gameID)
+            }
+            searchId(gameID)     
         }
         
         fetch("https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=1&exact=0")
@@ -120,6 +122,17 @@ var sortGames = function(genreBtn) {
             displayGames(data)
         }
         )
+
+        var searchId = function(gameID) {
+        // console.log(gameID)
+        var idArray = gameID
+        fetch("https://www.cheapshark.com/api/1.0/games?ids=" + idArray)
+        .then(result => result.json())
+        .then(data => {
+            console.log(data)
+        })
+        // console.log(idArray)
+        }
     }
 
 
