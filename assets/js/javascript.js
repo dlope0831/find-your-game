@@ -25,43 +25,6 @@ var genresArrayEl = [
     {name:"Educational",class:"educational"}
 ]
 
-var displayGames = function(data) {
-    gameInfo.innerHTML = "";
-    for (var i = 0; i < data.length; i++){
-        gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
-        gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
-        // console.log(data[i].title);
-    }     
-}
-
-fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=50&sortBy=release')
-.then(result => result.json())
-.then(data => {
-    // console.log('data',data);
-    // displayGames(data)
-}
-)
-
-
-var apiKey = "d7abd65b5bef4c83850767b95d538795";
-var search = ["action","horror", "indie"];
-
-var displayGenre = function(genre) {
-    genreInfo.innerHTML = "";
-    for (var i = 0; i < genre.results.length; i++){
-        genreInfo.innerHTML += "<li>" + genre.results[i].name + "</li>";
-        
-    }     
-}
-
-fetch("https://api.rawg.io/api/games?genres="+search.join(",")+"&key=" + apiKey)
-.then(result => result.json())
-.then(genre => {
-    // console.log('genre', genre.results);
-    displayGenre(genre)
-})
-
-
 // The user starts the survey
 startBtn = document.createElement("button");
 startBtn.innerHTML = "Start survey";
@@ -107,7 +70,7 @@ var sortGames = function(genreBtn) {
         var gameName = genre.results[i].slug;
         // console.log(gameName)
 
-        nameInput(gameName)
+       console.log(gameName)
     }     
 
     };
@@ -122,37 +85,37 @@ var sortGames = function(genreBtn) {
 
     // end RAWG genre API fetch request
 
-    var nameInput = function(gameName) {
-        var displayGames = function(data) {
-            gameInfo.innerHTML = "";
-            for (var i = 0; i < data.length; i++){
-                var gameID = data[i].gameID;
-                // gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
-                // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
-                // console.log(gameID)
-            }
-            searchId(gameID)     
-        }
+    // var nameInput = function(gameName) {
+    //     var displayGames = function(data) {
+    //         gameInfo.innerHTML = "";
+    //         for (var i = 0; i < data.length; i++){
+    //             var gameID = data[i].gameID;
+    //             // gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
+    //             // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
+    //             // console.log(gameID)
+    //         }
+    //         searchId(gameID)     
+    //     }
         
-        fetch("https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=1&exact=0")
-        .then(result => result.json())
-        .then(data => {
-            // console.log(data);
-            displayGames(data)
-        }
-        )
+    //     fetch("https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=1&exact=0")
+    //     .then(result => result.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         displayGames(data)
+    //     }
+    //     )
 
-        var searchId = function(gameID) {
-        // console.log(gameID)
-        var idArray = gameID
-        fetch("https://www.cheapshark.com/api/1.0/games?ids=" + idArray)
-        .then(result => result.json())
-        .then(data => {
-            console.log(data)
-        })
-        // console.log(idArray)
-        }
-    }
+    //     var searchId = function(gameID) {
+    //     // console.log(gameID)
+    //     var idArray = gameID
+    //     fetch("https://www.cheapshark.com/api/1.0/games?ids=" + idArray)
+    //     .then(result => result.json())
+    //     .then(data => {
+    //         console.log(data)
+    //     })
+    //     // console.log(idArray)
+    //     }
+    // }
 
 
 }
