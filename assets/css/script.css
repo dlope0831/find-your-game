@@ -22,10 +22,18 @@ word-spacing: 30px;
 color: var(--primary-color);
 }
 
+.h1 {
+  color: var(--primary-color);
+}
+
 /* body */
 
 body {
   background-color: var(--primary-color);
+}
+
+.box {
+  background-color: var(--secondary-color);
 }
 
 .main {
@@ -42,7 +50,12 @@ body {
 
 .usetext {
   display: flex;
- color: var(--tertiary-color);
+  color: var(--tertiary-color);
+}
+
+.bartext {
+  color: var(--primary-color);
+  font-size: 20px;
 }
 
 /* hero */
