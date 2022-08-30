@@ -1,7 +1,33 @@
-/* header */
-.h3 {
-font-size: 24px;  
+:root {
+  --primary-color: #433378;
+  --secondary-color: #38517b;
+  --tertiary-color: #39a6b2;
 }
+
+
+/* header */
+
+header {
+  background-color: var(--secondary-color);
+  margin left: 15px;
+}
+
+.notification {
+  background-color: var(--tertiary-color);
+  
+}
+
+.h3 {
+font-size: 24px;
+word-spacing: 30px;
+color: var(--primary-color);
+}
+
+/* body */
+body {
+  background-color: var(--primary-color);
+}
+
 
 /* hero */
 .hero {
@@ -17,4 +43,16 @@ main {
 
 h2 {
     margin-bottom: 15;
+    color: var(--secondary-color);
+}
+
+/* footer */
+.footertext {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary-color);
+
+}
+.icons {
+  justify-content: right;
 }
