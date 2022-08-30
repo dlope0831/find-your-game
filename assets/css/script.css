@@ -9,7 +9,6 @@
 
 header {
   background-color: var(--secondary-color);
-  margin left: 15px;
 }
 
 .notification {
@@ -24,10 +23,27 @@ color: var(--primary-color);
 }
 
 /* body */
+
 body {
   background-color: var(--primary-color);
 }
 
+.main {
+  background-color: var(--tertiary-color);
+}
+
+.gameicon {
+  color: var(--tertiary-color);
+}
+
+.sidebar {
+  background-color: var(--primary-color);
+}
+
+.usetext {
+  display: flex;
+ color: var(--tertiary-color);
+}
 
 /* hero */
 .hero {
