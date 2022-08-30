@@ -1,0 +1,87 @@
+:root {
+  --primary-color: #433378;
+  --secondary-color: #38517b;
+  --tertiary-color: #39a6b2;
+}
+
+
+/* header */
+
+header {
+  background-color: var(--secondary-color);
+}
+
+.notification {
+  background-color: var(--tertiary-color);
+  
+}
+
+.h3 {
+font-size: 24px;
+word-spacing: 30px;
+color: var(--primary-color);
+}
+
+.h1 {
+  color: var(--primary-color);
+}
+
+/* body */
+
+body {
+  background-color: var(--primary-color);
+}
+
+.box {
+  background-color: var(--secondary-color);
+}
+
+.main {
+  background-color: var(--tertiary-color);
+}
+
+.gameicon {
+  color: var(--tertiary-color);
+}
+
+.sidebar {
+  background-color: var(--primary-color);
+}
+
+.usetext {
+  display: flex;
+  color: var(--tertiary-color);
+}
+
+.bartext {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+/* hero */
+.hero {
+    display: flex;
+    background-image: url(../images/Gaming-Wallpaper-Desktop.jpg);
+    background-position: 50%;
+}
+
+/* main box component */
+main {
+  margin: 35px;  
+}
+
+h2 {
+    margin-bottom: 15;
+    color: var(--secondary-color);
+}
+
+/* footer */
+.footertext {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary-color);
+
+}
+.icons {
+  justify-content: right;
+}
