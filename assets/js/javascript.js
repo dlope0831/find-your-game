@@ -27,7 +27,7 @@ var genresArrayEl = [
 
 // The user starts the survey
 startBtn = document.createElement("button");
-startBtn.innerHTML = "Start survey";
+startBtn.innerHTML = "Start Survey";
 startBtn.className = "button is-primary";
 
 surveyForm.appendChild(startBtn);
