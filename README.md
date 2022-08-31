@@ -6,4 +6,5 @@ This quiz is designed to give users a new savepoint in their video game journey.
 
 
 # Website Screenshot
-![alt screenshot of Find Your Game]()
+![alt screenshot of Find Your Game](./assets/images/Website%20Screenshot%201.png)
+![alt screenshot of Find Your Game](./assets/images/Website%20Screenshot%202.png)
