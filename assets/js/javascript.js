@@ -57,7 +57,9 @@ var createGenresBtn = function(genreBtn) {
 // The user selects genres that they are interested in
 var sortGames = function(genreBtn) {
     var selectedGenre = genreBtn.target.className;
+
     console.log(selectedGenre)
+
     
     // This is the RAWG API that is used to search games by genre the user selects
     var apiKey = "d7abd65b5bef4c83850767b95d538795";
@@ -67,6 +69,7 @@ var sortGames = function(genreBtn) {
     for (var i = 0; i < genre.results.length; i++){
 
         genreInfo.innerHTML += "<li>" + genre.results[i].name + "</li>";
+
         genreInfo.innerHTML += "<p> Rating: " + genre.results[i].rating + "/5 </p>";
 
         var gameName = genre.results[i].slug
@@ -75,7 +78,9 @@ var sortGames = function(genreBtn) {
     //    console.log(gameName)
     }     
         nameInput(gameName)
+
     };
+    // console.log(nameArray)
 
     
     fetch("https://api.rawg.io/api/games?metacritic&genres="+ selectedGenre +"&key=" + apiKey)
@@ -109,10 +114,17 @@ var sortGames = function(genreBtn) {
         }
         )
 
-
+    console.log(nameArray)
 }
 }
 
+var verifyArray = function(nameArray) {
+    if (nameArray > 0) {
+        console.log(nameArray)
+    }else {
+        verifyArray();
+    }
+}
 // modal function
 
 document.addEventListener('DOMContentLoaded', () => {
