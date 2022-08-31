@@ -11,8 +11,6 @@ header {
   background-color: var(--secondary-color);
 }
 
-
-
 .notification {
   background-color: var(--tertiary-color);
   
@@ -36,6 +34,7 @@ body {
 
 .box {
   background-color: var(--secondary-color);
+  justify-content: center;
 }
 
 .main {
@@ -80,7 +79,7 @@ h2 {
 }
 
 button {
-  margin: 12px;
+  margin: 6px;
   border-width: 1px;
   cursor: pointer;
   justify-content: center;
