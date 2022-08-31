@@ -1,7 +1,8 @@
 var gameInfo = document.getElementById("display-games");
 var genreInfo = document.getElementById("display-genre");
 var surveyForm = document.querySelector(".quiz-body");
-var startBtn = document.querySelector(".btn-start");
+var modalForm = document.querySelector("modalresults")
+var startBtn = document.querySelector("button is-primary");
 
 var genresArrayEl = [
     {name:"Massively Multiplayer", class:"massively-multiplayer"},
@@ -10,7 +11,6 @@ var genresArrayEl = [
     {name:"Adventure",class:"adventure"},
     {name:"Racing",class:"racing"},
     {name:"Strategy",class:"strategy"},
-    {name:"MOBA",class:"moba"},
     {name:"Indie",class:"indie"},
     {name:"Role-playing",class:"role-playing-games-rpg"},
     {name:"Sports",class:"sports"},
@@ -28,7 +28,7 @@ var genresArrayEl = [
 // The user starts the survey
 startBtn = document.createElement("button");
 startBtn.innerHTML = "Start survey";
-startBtn.className = "btn btn-start";
+startBtn.className = "button is-primary";
 
 surveyForm.appendChild(startBtn);
 
@@ -112,5 +112,52 @@ var sortGames = function(genreBtn) {
 
 }
 }
+
+// modal function
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Functions to open and close a modal
+    function openModal($el) {
+      $el.classList.add('is-active');
+    }
+  
+    function closeModal($el) {
+      $el.classList.remove('is-active');
+    }
+  
+    function closeAllModals() {
+      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+        closeModal($modal);
+      });
+    }
+  
+    // Add a click event on buttons to open a specific modal
+    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+      const modal = $trigger.dataset.target;
+      const $target = document.getElementById(modal);
+  
+      $trigger.addEventListener('click', () => {
+        openModal($target);
+      });
+    });
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      const e = event || window.event;
+  
+      if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+      }
+    });
+  });
 
 startBtn.addEventListener("click", createGenresBtn);

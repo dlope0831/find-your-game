@@ -11,6 +11,28 @@ header {
   background-color: var(--secondary-color);
 }
 
+button {
+  margin: 6px;
+  border-width: 1px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  background-color: #485fc7;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+}
+
+
+button:hover {
+  background-color:#485fc7;
+}
+
 .notification {
   background-color: var(--tertiary-color);
   
@@ -57,6 +79,7 @@ body {
   color: var(--primary-color);
   font-size: 20px;
 }
+
 
 /* hero */
 .hero {

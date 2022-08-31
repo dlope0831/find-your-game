@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/script.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Find your video game!</title>
   </head>
 
@@ -41,30 +41,25 @@
       
       <!--quiz area-->
       <div>
-      <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-          <p>Click Here to View Your Results</p>
-        </div>
-        <button class="modal-close is-large is-active" aria-label="close"></button>
-      </div>
-        <p><strong> Tired of playing the same video games? You stumbled upon the perfect place. By answering a couple of easy questions, you will be introduced to new video games based on your interests. Explore your video game horizon today! </strong></p>
+
+       
+
+        <!-- <p><strong> Tired of playing the same video games? You stumbled upon the perfect place. By answering a couple of easy questions, you will be introduced to new video games based on your interests. Explore your video game horizon today! </strong></p> -->
       </div>
       
       <!--quiz area-->
 
-      <section class="box is-8">
-        <p class="level">Click here to start the quiz!</p>
-      </section>
         <section class="box is-8 quiz-body">
         </section>
-        <!-- <p class="bd-notification is-primary">Quiz Area Boxes Can Go In here!</p> -->
+
+     <!--modal button-->
+     <button class="js-modal-trigger button is-primary is-link" data-target="modal-js-example">
+      Click Here to See Results
+    </button>
       
-      <div id="display-games">
-      </div>
       
-      <div id= "display-genre">
-      </div>
+      
+      
 
     </div>
  </main> 
@@ -75,6 +70,22 @@
     <h3 class="footertext"><strong>🕹️ Made by Collin, Daniela and Leslie! <i class="p-1 is-clickable is-pulled-right fa-brands fa-instagram fa-2x"> </i><i class="p-1 is-clickable is-pulled-right fa-brands fa-facebook fa-2x"></i> <i class="p-1 is-clickable is-pulled-right fa-brands fa-twitter fa-2x"></i></strong></h3>
   </div>
  </footer>
+
+<!--modal-->
+ <div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content is-active">
+    <div class="box">
+      <div class="modalresults">
+        <div id="display-games"></div>
+        <div id= "display-genre"></div>
+
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close">Test</button>
+</div>
 
 
 
