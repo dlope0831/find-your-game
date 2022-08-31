@@ -57,67 +57,65 @@ var createGenresBtn = function(genreBtn) {
 // The user selects genres that they are interested in
 var sortGames = function(genreBtn) {
     var selectedGenre = genreBtn.target.className;
-    var nameArray = [];        
-    // console.log(selectedGenre)
+
+    console.log(selectedGenre)
+
     
     // This is the RAWG API that is used to search games by genre the user selects
     var apiKey = "d7abd65b5bef4c83850767b95d538795";
-    // var search = ["action","horror", "indie"];
 
     var displayGenre = function(genre) {
     genreInfo.innerHTML = "";
     for (var i = 0; i < genre.results.length; i++){
+
         genreInfo.innerHTML += "<li>" + genre.results[i].name + "</li>";
-        var gameName = genre.results[i].slug;
-        
-        nameArray.push(gameName)
+
+        genreInfo.innerHTML += "<p> Rating: " + genre.results[i].rating + "/5 </p>";
+
+        var gameName = genre.results[i].slug
+
+
+    //    console.log(gameName)
     }     
+        nameInput(gameName)
+
     };
     // console.log(nameArray)
 
     
-    fetch("https://api.rawg.io/api/games?genres="+ selectedGenre +"&key=" + apiKey)
+    fetch("https://api.rawg.io/api/games?metacritic&genres="+ selectedGenre +"&key=" + apiKey)
     .then(result => result.json())
     .then(genre => {
-    // console.log('genre', genre.results);
+    console.log('genre', genre.results);
     displayGenre(genre)
     });
 
+
+
     // end RAWG genre API fetch request
 
-    // var nameInput = function(gameName) {
-    //     var displayGames = function(data) {
-    //         gameInfo.innerHTML = "";
-    //         for (var i = 0; i < data.length; i++){
-    //             var gameID = data[i].gameID;
-    //             // gameInfo.innerHTML += "<li>" + data[i].title + "</li>";
-    //             // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
-    //             // console.log(gameID)
-    //         }
-    //         searchId(gameID)     
-    //     }
+    var nameInput = function(gameName) {
+        var displayGames = function(data) {
+            gameInfo.innerHTML = "";
+            for (var i = 0; i < data.length; i++){
+                var gameID = data[i].gameID;
+                gameInfo.innerHTML += "<li>" + data[i].cheapest + "</li>";
+                // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
+                // console.log(gameID)
+            }
+              
+        }
         
-    //     fetch("https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=1&exact=0")
-    //     .then(result => result.json())
-    //     .then(data => {
-    //         console.log(data);
-    //         displayGames(data)
-    //     }
-    //     )
-
-    //     var searchId = function(gameID) {
-    //     // console.log(gameID)
-    //     var idArray = gameID
-    //     fetch("https://www.cheapshark.com/api/1.0/games?ids=" + idArray)
-    //     .then(result => result.json())
-    //     .then(data => {
-    //         console.log(data)
-    //     })
-    //     // console.log(idArray)
-    //     }
-    // }
+        fetch("https://www.cheapshark.com/api/1.0/games?title=" + gameName + "&limit=1&exact=0")
+        .then(result => result.json())
+        .then(data => {
+            console.log(data);
+            displayGames(data)
+        }
+        )
 
     console.log(nameArray)
+}
 }
 
 var verifyArray = function(nameArray) {
