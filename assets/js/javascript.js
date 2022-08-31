@@ -11,7 +11,6 @@ var genresArrayEl = [
     {name:"Adventure",class:"adventure"},
     {name:"Racing",class:"racing"},
     {name:"Strategy",class:"strategy"},
-    {name:"MOBA",class:"moba"},
     {name:"Indie",class:"indie"},
     {name:"Role-playing",class:"role-playing-games-rpg"},
     {name:"Sports",class:"sports"},
