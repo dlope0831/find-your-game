@@ -11,28 +11,43 @@
 
 <body>
 
-
-  <!--header-->
+<!--header-->
 <header class="level">
-  <div class="notification container is-max-desktop level-item">
+  <div class="header notification container is-max-desktop level-item">
     <h1 class="title">Welcome to the Video Game Recommendation Generator!</h1>
   </div>
 </header>
 
 <!--hero-->
-<section class="hero is-medium">
+<section class="hero is-medium is-max-desktop">
   <div class="hero-body"></div>
 </section>
 
-  <!--main-->
+<!--main-->
  <main class="box is-max-desktop level is-vcentered">
-    <div class="columns notification container is-vcentered">
+    <div class="columns notification container is-vcentered is-12">
 
       <!--sidebar-->
-      <div class="column is-fullheight is-4">
-        <div class="box">
-          <h2 class="title center"><i class="fa-solid fa-gamepad fa-2x"></i> How To Use</h2>
+      <div class="column is-fullheight is-4" id="quizbox">
+        <div class="sidebar box">
+          <h2 class="title center">
+            <i class="gameicon fa-solid fa-gamepad fa-2x"></i>
+            <p class="usetext is-pulled-right pr-6 pt-3">How To Use</p>
+          </h2>
         </div>
+        <p class="bartext"><strong>When you've gotten all the exp you can grind, and the game is all but done for you. It's time for the next best thing. But where to start?</strong></p>  
+        <p class="pt-4 bartext"><strong>This quiz is designed to give you a new savepoint in your video game journey. With just a few questions you can fall into a whole new world to enjoy for hours on end. Get recommendations for all different genres, as well as recieve price ranges for each of those answers. Try it out today!</strong></p>
+      </div>
+      
+      <!--quiz area-->
+      <div>
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <p>Click Here to View Your Results</p>
+        </div>
+        <button class="modal-close is-large is-active" aria-label="close"></button>
+      </div>
         <p><strong> Tired of playing the same video games? You stumbled upon the perfect place. By answering a couple of easy questions, you will be introduced to new video games based on your interests. Explore your video game horizon today! </strong></p>
       </div>
       
@@ -46,20 +61,18 @@
         <!-- <p class="bd-notification is-primary">Quiz Area Boxes Can Go In here!</p> -->
       
       <div id="display-games">
-        
-      
       </div>
+      
       <div id= "display-genre">
-
       </div>
 
     </div>
  </main> 
 
-  <!--footer-->
+<!--footer-->
  <footer>
-  <div class="notification container is-max-desktop level-item">
-    <h3>Made by the team that brought you damn good grilled cheese sandwiches. <i class="fa-brands fa-instagram fa-2x"></i> <i class="fa-brands fa-facebook fa-2x"></i> <i class="fa-brands fa-twitter fa-2x"></i> </h3>
+  <div class="notification container is-max-desktop is-align-items-flex-end">
+    <h3 class="footertext"><strong>🕹️ Made by Collin, Daniela and Leslie! <i class="p-1 is-clickable is-pulled-right fa-brands fa-instagram fa-2x"> </i><i class="p-1 is-clickable is-pulled-right fa-brands fa-facebook fa-2x"></i> <i class="p-1 is-clickable is-pulled-right fa-brands fa-twitter fa-2x"></i></strong></h3>
   </div>
  </footer>
 
