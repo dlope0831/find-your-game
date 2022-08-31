@@ -57,7 +57,7 @@ var createGenresBtn = function(genreBtn) {
 // The user selects genres that they are interested in
 var sortGames = function(genreBtn) {
     var selectedGenre = genreBtn.target.className;
-    var nameArray = []         
+    var nameArray = [];        
     // console.log(selectedGenre)
     
     // This is the RAWG API that is used to search games by genre the user selects
@@ -73,7 +73,7 @@ var sortGames = function(genreBtn) {
         nameArray.push(gameName)
     }     
     };
-    console.log(nameArray)
+    // console.log(nameArray)
 
     
     fetch("https://api.rawg.io/api/games?genres="+ selectedGenre +"&key=" + apiKey)
@@ -117,9 +117,16 @@ var sortGames = function(genreBtn) {
     //     }
     // }
 
-
+    console.log(nameArray)
 }
 
+var verifyArray = function(nameArray) {
+    if (nameArray > 0) {
+        console.log(nameArray)
+    }else {
+        verifyArray();
+    }
+}
 // modal function
 
 document.addEventListener('DOMContentLoaded', () => {
