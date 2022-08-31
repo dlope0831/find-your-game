@@ -16,7 +16,7 @@ var genresArrayEl = [
     {name:"Sports",class:"sports"},
     {name:"Simulation",class:"simulation"},
     {name:"Arcade", class:"arcade"},
-    {name:"Horror",class:"horror"},
+    // {name:"Horror",class:"horror"},
     {name:"Puzzle",class:"puzzle"},
     {name:"Fighting",class:"fighting"},
     {name:"Casual",class:"casual"},
@@ -94,7 +94,7 @@ var sortGames = function(genreBtn) {
             gameInfo.innerHTML = "";
             for (var i = 0; i < data.length; i++){
                 var gameID = data[i].gameID;
-                gameInfo.innerHTML += "<li>" + data[i].cheapest + "</li>";
+                gameInfo.innerHTML += "<li>" + data[0].cheapest + "</li>";
                 // gameInfo.innerHTML += "<li>" + data[i].normalPrice + "</li>";
                 // console.log(gameID)
             }
